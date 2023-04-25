@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: rgb(14, 13, 13);
+}
+.container {
+    padding: 50px;
+  background-color: rgb(8, 75, 75);
+}
+
+input[type=text], input[type=password], textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: orange;
+  outline: none;
+}
+ div {
+            padding: 10px 0;
+         }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.button {
+  border: none;
+  color: blueviolet;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<form>
+  <div class="container">
+  <center>  <h1> TOOLS DETAILS FOR CONTIBUTION</h1> </center>
+  <hr>
+  <label> Firstname </label> 
+<input type="text" name="firstname" placeholder= "Firstname" size="15" required /> 
+<label> Middlename: </label> 
+<input type="text" name="middlename" placeholder="Middlename" size="15" required /> 
+<label> Lastname: </label>  
+<input type="text" name="lastname" placeholder="Lastname" size="15"required /> 
+<div>
+<label> 
+TYPE OF TOOLS :
+</label> 
+
+<select>
+<option value="Types of Tools">CHOOSE</option>
+<option value="Plough"> Plough</option>
+<option value="Cultivator">cultivator</option>
+<option value="HOE">HOE</option>
+<option value="SEED-DRILL">seed-drill</option>
+<option value="Disk Harrow">Harrow</option>
+<option value="Pickage">Pickage</option>
+<option value="others">Others</option>
+</select>
+</div>
+<div>
+
+
+
+<label>
+  MODEL NO./Manufacturing date
+</label>
+
+ <form action="/action_page.php">
+  <label for="myfile">Select files:</label>
+  <input type="file" id="myfile" name="myfile" multiple><br><br>
+  
+ </form>
+
+<label>
+  DURANTION / ANY OTHER DEFECTS:
+</label>
+
+<input type=”radio” 
+       name”affirmative”
+       value=”yes”
+       checked>
+            Yes
+</input>
+
+<input type=”radio”
+       name”negative”
+       value=”no”>
+            No
+</input>
+
+
+<form action="/action_page.php">
+  <label for="myfile">Select files:</label>
+  <input type="file" id="myfile" name="myfile" multiple><br><br>
+</form>
+
+<label>
+Want to rent:
+</label>
+
+
+
+<select>
+    <option value="Types of Tools">CHOOSE</option>
+    <option value="Plough"> yes </option>
+    <option value="Cultivator">No</option>
+    <option value="HOE">Maybe</option>
+    </select>
+    </div>
+    <div>
+
+
+<label> 
+Gender :
+</label><br>
+<input type="radio" value="Male" name="gender" checked > Male 
+<input type="radio" value="Female" name="gender"> Female 
+<input type="radio" value="Other" name="gender"> Other
+
+</div>
+<label> 
+Phone :
+</label>
+<input type="text" name="country code" placeholder="Country Code"  value="+91" size="2"/> 
+<input type="text" name="phone" placeholder=" alternate phone no." size="10"/ required> 
+Current Address :
+<textarea cols="80" rows="5" placeholder="Current Address" value="address" required>
+
+</textarea>
+<button class="button button1">SUBMIT</button>

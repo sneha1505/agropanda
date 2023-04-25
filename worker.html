@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Calibri, Helvetica, sans-serif;
+        background-color: rgb(233, 191, 201);
+        color:cornsilk;
+      }
+      .container {
+        padding: 60px;
+        background-color: rgb(81, 17, 33);
+      
+      }
+      
+      input[type="text"],
+      input[type="password"],
+      textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        background-color: rgb(238, 190, 101);
+        outline: none;
+      }
+      div {
+        padding: 10px 0;
+      }
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+      .button {
+        border: none;
+        color: blueviolet;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      .hobby {
+      width: 95%;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 15px;
+       }
+      .registerbtn {
+        background-color: #4caf50;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+      .registerbtn:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="container">
+        <center><h1>WORKER Required Form</h1></center>
+        <hr />
+        <label> Firstname </label>
+        <input
+          type="text"
+          name="firstname"
+          placeholder="Firstname"
+          size="15"
+          required
+        />
+      
+        <div>
+          <label>
+            Skills Required:
+          </label>
+
+          <select>
+            <option value="Types of Tools"> Agri Tools</option>
+            <option value="Plough"> PLOUGHING</option>
+            <option value="Cultivator">cultivatING</option>
+            <option value="HOE">HOEING</option>
+            <option value="SEED-DRILL">seed-drilLING</option>
+            <option value="Disk Harrow">SOWING</option>
+            <option value="Pickage">Pickage</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+        <div>
+          <label>
+            Number of Workers needed:
+            <div class="form-group">
+              <textarea
+                class="form-input"
+                rows="4"
+                cols="50"
+                style="height: auto;"
+              ></textarea>
+            </div>
+          </div>
+
+          <label>
+            DURATION
+          </label>
+           <div class="hobby">
+              <label><input type="checkbox" value="Web" />0-4 yr</label>
+              <label><input type="checkbox" value="iOS" />4-7 yr</label>
+              <label><input type="checkbox" value="Andriod" />Above 7 yr</label>
+              <label><input type="checkbox" value="Game" />Fresher</label>
+            </div>
+        
+
+        <label>
+            PAYMENT
+          </label>
+          <select>
+            <option value="Types of Tools">CHEQUE</option>
+            <option value="Plough"> UPI</option>
+            <option value="Cultivator">NEFT</option>
+            <option value="HOE">CASH</option>
+          </select>
+        </div>
+        <div>
+
+        <button class="button button1">SUBMIT</button>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="agro-work.css" />
+  </head>
+  <body>
+    <form class="signup-form" action="/register" method="post">
+      <div class="form-header">
+        <h1>Consent Form</h1>
+      </div>
+
+      <div class="form-body">
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="firstname" class="label-title">First name *</label>
+            <input
+              type="text"
+              id="firstname"
+              class="form-input"
+              placeholder="Enter your first name"
+              required="required"
+            />
+
+            <div type="button" onclick="startListening()">
+              <img src="./mic.png" width="20" />
+            </div>
+          </div>
+
+          <div class="form-group right">
+            <label for="lastname" class="label-title">Last name</label>
+            <input
+              type="text"
+              id="lastname"
+              class="form-input"
+              placeholder="Enter your last name"
+            />
+            <div class="bhn" id="bhn">
+              <div onclick="startListeningLastName()">
+                <img src="./mic.png" width="20" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="label-title">Aadhar No.*</label>
+          <input placeholder="Enter you adhaar card no." required="required" />
+        </div>
+
+        <!-- Passwrod and confirm password -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="password" class="label-title">DO YOU WANT WORK *</label>
+            <select class="form-input" id="level">
+              <option value="S">YES</option>
+              <option value="B">NO</option>
+              <option value="I">MAY BE</option>
+            </select>
+          </div>
+          <div class="form-group right">
+            <label for="confirm-password" class="label-title"
+              >How soon can you join*</label
+            >
+            <select class="form-input" id="level">
+              <option value="S">Immediate</option>
+              <option value="B">After a month</option>
+              <option value="I">After a year</option>
+              <option value="A">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Gender and Hobbies -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label class="label-title">Gender:</label>
+            <div class="input-group">
+              <label for="male"
+                ><input type="radio" name="gender" value="male" id="male" />
+                Male</label
+              >
+              <label for="female"
+                ><input type="radio" name="gender" value="female" id="female" />
+                Female</label
+              >
+              <label class="other"
+                ><input type="radio" name="gender" value="other" id="other" />
+                other</label
+              >
+            </div>
+          </div>
+          <div class="form-group right">
+            <label class="label-title">Experience level</label>
+            <div class="exp">
+              <label><input type="checkbox" value="Web" />0-4yr</label>
+              <label><input type="checkbox" value="iOS" />4-7yr</label>
+              <label><input type="checkbox" value="Andriod" />Above 7 yr</label>
+              <label
+                ><input type="checkbox" value="Game" />Work as volunteer</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Source of Income and Income -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label class="label-title">MODE OF SALARY EXPECTED</label>
+            <select class="form-input" id="level">
+              <option value="S">CASH</option>
+              <option value="B">CHEQUE</option>
+              <option value="I">UPI</option>
+              <option value="A">FUND TRANSFER</option>
+              <option vaqlue="O">NEFT</option>
+            </select>
+          </div>
+
+          <div class="form-group right">
+            <label for="experience" class="label-title">Expected Salary</label>
+            <input
+              type="range"
+              min="5"
+              max="100"
+              step="5"
+              value="0"
+              id="experience"
+              class="form-input"
+              onChange="change();"
+              style="height: 28px; width: 78%; padding: 0;"
+            />
+            <span id="range-label">0k</span>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="form-group">
+          <label for="choosefile" class="label-title"
+            >Add Skills With Experience levels</label
+          >
+          <textarea
+            class="form-input"
+            rows="4"
+            cols="50"
+            style="height: auto;"
+          ></textarea>
+
+          <div class="bhn" id="bhn">
+            <div onclick="startListeningchoosefile()">
+              <img src="./mic.png" width="20" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- form-footer -->
+      <div class="form-footer">
+        <span>* required</span>
+        <button type="submit" class="bott">SUBMIT</button>
+      </div>
+    </form>
+
+    <!-- Script for range input label -->
+    <script>
+      var rangeLabel = document.getElementById("range-label");
+      var experience = document.getElementById("experience");
+
+      function change() {
+        rangeLabel.innerText = experience.value + "K";
+      }
+
+      function startListening() {
+        const recognition = new webkitSpeechRecognition();
+        recognition.lang = "en";
+        recognition.addEventListener("result", (e) => {
+          const text = e.results[0][0].transcript;
+          let inp = e.results[0][0].transcript;
+
+          document.querySelector("#firstname").value = text;
+          console.log(text);
+          return text;
+        });
+
+        recognition.start();
+      }
+
+      function startListeningLastName() {
+        const recognition = new webkitSpeechRecognition();
+        recognition.lang = "en";
+        recognition.addEventListener("result", (e) => {
+          const text = e.results[0][0].transcript;
+          let inp = e.results[0][0].transcript;
+
+          document.querySelector("#lastname").value = text;
+          console.log(text);
+          return text;
+        });
+
+        recognition.start();
+      }
+
+      function startListeningLastName() {
+        const recognition = new webkitSpeechRecognition();
+        recognition.lang = "en";
+        recognition.addEventListener("result", (e) => {
+          const text = e.results[0][0].transcript;
+          let inp = e.results[0][0].transcript;
+
+          document.querySelector("#choosefile").value = text;
+          console.log(text);
+          return text;
+        });
+
+        recognition.start();
+      }
+    </script>
+  </body>
+</html>
